@@ -251,31 +251,3 @@ u8* aes_gcm_verify_and_decrypt(u8 *expkey, u8 *counter, char *input) {
     free(ghash_input);
     return plaintext;
 }
-/*
-int main() {
-    // Example usage of AES-GCM
-    u8 key[16] = {0x60, 0x3d, 0xeb, 0x10, 0x15, 0xca, 0x71, 0xbe, 0x2b, 0x73, 0xae, 0xf0, 0x85, 0x7d, 0x77, 0x81};
-    u8 iv[16] = {0x00,0x00,0x00,0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01};
-    u8 *plaintext = "Hello, this is a test";
-    u8 *ogtext;
-    u8 *add_data = "From ISI with love";
-    char *ghash_input;
-    u8 expkey[176];
-
-    AES_128_Key_Expansion(key,expkey);
-    ghash_input =  aes_gcm_encrypt(expkey, iv, plaintext, strlen(plaintext), add_data, strlen(add_data));
-    
-    printf("Ciphertext: ");
-    printf("%s", ghash_input);
-
-    ogtext = aes_gcm_verify_and_decrypt(expkey, iv, ghash_input);
-    
-    printf("\nOriginal text: ");
-    printf("%s", ogtext);
-    printf("\n");
-
-    free(ogtext);
-    free(ghash_input);
-
-    return 0;
-}*/
